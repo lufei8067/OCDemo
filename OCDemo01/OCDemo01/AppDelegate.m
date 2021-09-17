@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "ODCarshCapture.h"
+#import "LGUncaughtExceptionHandle.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //[ODCarshCapture installUncaughtExceptionHandler:YES showAlert:YES];
+    [LGUncaughtExceptionHandle installUncaughtSignalExceptionHandler];
+
     return YES;
 }
 

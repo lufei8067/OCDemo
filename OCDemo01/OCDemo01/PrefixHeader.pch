@@ -14,6 +14,7 @@
 #ifdef __OBJC__
 
 #import "ODDefinition.h"
+#import "ODCommon/ODCommon.h"
 
 
 //***
