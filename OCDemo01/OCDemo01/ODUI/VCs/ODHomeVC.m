@@ -7,6 +7,9 @@
 //
 
 #import "ODHomeVC.h"
+#import <sys/socket.h>
+#import <netinet/in.h>
+#import <arpa/inet.h>
 
 @interface ODHomeVC ()
 
@@ -19,6 +22,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    //1创建socket
+    int clientSocket = socket(AF_INET, SOCK_STREAM, 0);
+    
+    //2链接服务器
+    
+    
+    
+    
     
     self.dataArray = @[@"大师班", @"牛逼板", @"嗷嗷嗷", @"嗨啊还", @"的点点滴滴"];
     
@@ -50,13 +63,38 @@
     //NSSetUncaughtExceptionHandler(&LGEx)
 }
 
+- (void)firstButton
+{
+    NSLog(@"First button tapped");
+}
 
 -(void)menuCallBack:(UIButton*)btnCallBack{
     
     
-   // NSLog(@"%@", [self.dataArray objectAtIndex:6]);
+   //NSLog(@"%@", [self.dataArray objectAtIndex:6]);
+    
+//    UILOG(@"ddddddd");
+//    SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
+//    [alert addButton:@"请你奔溃" actionBlock:^{
+//        //self.dismissed = YES;
+//    }];
+//
+//    [alert showSuccess:@"sxxx"subTitle:@"rrr"closeButtonTitle:nil duration:0.0f];
+//
+//
+//
     
     
+    
+    
+    
+
+    
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    [alert addTimerToButtonIndex:0 reverse:YES];
+    [alert showInfo:self title:@"Countdown Timer"
+            subTitle:@"This alert has a duration set, and a countdown timer on the Dismiss button to show how long is left."
+    closeButtonTitle:@"Dismiss" duration:10.0f];
     
     
 //    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -67,8 +105,8 @@
 //        free(signal);
 //
 //    }];
-    
-    [self performSelector:@selector(selString) withObject:nil afterDelay:2.0];
+//    
+//    [self performSelector:@selector(selString) withObject:nil afterDelay:2.0];
     
 }
 

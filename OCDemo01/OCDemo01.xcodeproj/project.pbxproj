@@ -32,6 +32,7 @@
 		8962567F26F33CF500A08054 /* ODShaderHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8962567A26F33CF500A08054 /* ODShaderHelper.m */; };
 		8962568326F33D9600A08054 /* ODCarshCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8962568226F33D9600A08054 /* ODCarshCapture.m */; };
 		8962568626F46D1400A08054 /* LGUncaughtExceptionHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8962568526F46D1400A08054 /* LGUncaughtExceptionHandle.m */; };
+		896256A426F496F600A08054 /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = 896256A226F496F600A08054 /* UIViewController+Alert.m */; };
 		89EE01FB26F3117000EF2079 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EE01FA26F3117000EF2079 /* AppDelegate.m */; };
 		89EE01FE26F3117000EF2079 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EE01FD26F3117000EF2079 /* SceneDelegate.m */; };
 		89EE020126F3117000EF2079 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EE020026F3117000EF2079 /* ViewController.m */; };
@@ -187,6 +188,8 @@
 		8962568226F33D9600A08054 /* ODCarshCapture.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ODCarshCapture.m; sourceTree = "<group>"; };
 		8962568426F46D1400A08054 /* LGUncaughtExceptionHandle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LGUncaughtExceptionHandle.h; sourceTree = "<group>"; };
 		8962568526F46D1400A08054 /* LGUncaughtExceptionHandle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGUncaughtExceptionHandle.m; sourceTree = "<group>"; };
+		896256A226F496F600A08054 /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
+		896256A326F496F600A08054 /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
 		89EE01F626F3117000EF2079 /* OCDemo01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCDemo01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89EE01F926F3117000EF2079 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		89EE01FA26F3117000EF2079 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -517,6 +520,15 @@
 			path = ODCrash;
 			sourceTree = "<group>";
 		};
+		896256A126F496F600A08054 /* ODCategory */ = {
+			isa = PBXGroup;
+			children = (
+				896256A226F496F600A08054 /* UIViewController+Alert.m */,
+				896256A326F496F600A08054 /* UIViewController+Alert.h */,
+			);
+			path = ODCategory;
+			sourceTree = "<group>";
+		};
 		89EE01ED26F3117000EF2079 = {
 			isa = PBXGroup;
 			children = (
@@ -542,6 +554,7 @@
 		89EE01F826F3117000EF2079 /* OCDemo01 */ = {
 			isa = PBXGroup;
 			children = (
+				896256A126F496F600A08054 /* ODCategory */,
 				8962566326F33BDA00A08054 /* ODTools */,
 				896255F926F3381600A08054 /* ODNetWork */,
 				896255C426F313CD00A08054 /* ODCommon */,
@@ -759,6 +772,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				896255E226F313CD00A08054 /* MBProgressHUD+MJ.m in Sources */,
+				896256A426F496F600A08054 /* UIViewController+Alert.m in Sources */,
 				8962567B26F33CF500A08054 /* ODVertexAttribArrayBuffer.m in Sources */,
 				8962568626F46D1400A08054 /* LGUncaughtExceptionHandle.m in Sources */,
 				8962566126F338F400A08054 /* ODGlobalVar.m in Sources */,

@@ -12,5 +12,6 @@ pod 'SDWebImage'
 pod 'TPKeyboardAvoiding'
 pod 'MJRefresh'
 pod 'YYCategories'
+pod 'SCLAlertView-Objective-C'
 
 end

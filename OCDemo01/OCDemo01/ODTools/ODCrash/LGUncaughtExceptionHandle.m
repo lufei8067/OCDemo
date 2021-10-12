@@ -7,11 +7,11 @@
 //
 
 #import "LGUncaughtExceptionHandle.h"
-//#import <SCLAlertView.h>
 #import <UIKit/UIKit.h>
 #include <libkern/OSAtomic.h>
 #include <execinfo.h>
 #include <stdatomic.h>
+
 
 NSString * const LGUncaughtExceptionHandlerSignalExceptionName = @"LGUncaughtExceptionHandlerSignalExceptionName";
 NSString * const LGUncaughtExceptionHandlerSignalExceptionReason = @"LGUncaughtExceptionHandlerSignalExceptionReason";
@@ -139,13 +139,18 @@ void LGSignalHandler(int signal)
     // 跑圈依赖 - mode
     CFArrayRef allmodes  = CFRunLoopCopyAllModes(runloop);
     
-//    SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
-//    [alert addButton:@"请你奔溃" actionBlock:^{
-//        self.dismissed = YES;
-//    }];
-//
-//    [alert showSuccess:exception.name subTitle:exception.reason closeButtonTitle:nil duration:0.0f];
-//
+    SCLAlertView *alert = [[SCLAlertView alloc] initWithNewWindowWidth:300.0f];
+    [alert addButton:@"请你奔溃" actionBlock:^{
+        self.dismissed = YES;
+    }];
+
+    [alert showSuccess:exception.name subTitle:exception.reason closeButtonTitle:nil duration:0.0f];
+
+    
+    
+    
+    
+    
     // 起死回生
     while (!self.dismissed) {
         for (NSString *mode in (__bridge NSArray *)allmodes) {
@@ -155,8 +160,7 @@ void LGSignalHandler(int signal)
     
     CFRelease(runloop);
     
-    NSDictionary *userInfo = [exception userInfo];
-
+    [self destrySignal:exception];
 }
 
 /// 保存奔溃信息或者上传
@@ -207,19 +211,7 @@ void LGSignalHandler(int signal)
     return backtrace;
 }
 
-//NSString *getAppInfo(){
-//    NSString *appInfo = [NSString stringWithFormat:@"App : %@ %@(%@)\nDevice : %@\nOS Version : %@ %@\n",
-//                         [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"],
-//                         [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"],
-//                         [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"],
-//                         [UIDevice currentDevice].model,
-//                         [UIDevice currentDevice].systemName,
-//                         [UIDevice currentDevice].systemVersion];
-//    //                         [UIDevice currentDevice].uniqueIdentifier];
-//    NSLog(@"Crash!!!! %@", appInfo);
-//    return appInfo;
-//}
-//
+
 
 -(void)destrySignal:(NSException *)exception
 {
